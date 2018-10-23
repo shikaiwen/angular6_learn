@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {EmployeeService} from './employee.service'
 @Component({
   selector: 'app-root',
@@ -75,11 +75,21 @@ import {EmployeeService} from './employee.service'
   
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
+
   title = 'basic';
 
   color = "red";
   colors = ["red","orange","black","pink"]
+
+
+  employeeService= null;
+
+  constructor(private eService:EmployeeService){
+    // this.employeeService = eService;
+  }
+
+
 
   displayFlag = true;
 
@@ -89,8 +99,13 @@ export class AppComponent {
 
   public message = "";
 
+  public employeeList = [];
 
-  public employeeList = new EmployeeService().getEmployees();
+  ngOnInit(): void {
+    // throw new Error("Method not implemented.");
+    // this.employeeList = this.eService.getEmployees();
+    this.eService.getEmployees().subscribe(data => this.employeeList = data);
+  }
 
   log1(value){
     console.log(value)
