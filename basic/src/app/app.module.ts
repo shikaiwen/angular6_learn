@@ -6,12 +6,14 @@ import { Childcomponent1Component } from './childcomponent1/childcomponent1.comp
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { EmployeeService } from './employee.service';
 import {HttpClientModule} from '@angular/common/http';
+import { DepartmentOverviewComponent } from './department-overview/department-overview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Childcomponent1Component,
-    EmployeeListComponent
+    EmployeeListComponent,
+    DepartmentOverviewComponent
   ],
   imports: [
     BrowserModule,

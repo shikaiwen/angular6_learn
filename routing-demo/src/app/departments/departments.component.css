@@ -1,0 +1,13 @@
+ul{
+    list-style-type: none;
+}
+ul li{
+    width:50px;
+    background-color:pink;
+    text-align:center;
+    margin-top:5px;
+}
+
+ul li.selected{
+    background-color:yellow;
+}

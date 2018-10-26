@@ -1,0 +1,31 @@
+
+
+{{ userForm.value | json}}
+<hr/>
+{{userModel | json}}
+
+<form #userForm="ngForm" >
+
+<!-- 
+    <input type="text" #name> 这里name是attribute
+    <input type="text" #name="ngModel"> 这里name是property
+ -->
+
+<input type="text"   #attrCountry ngModel name="country"  />
+{{attrCountry.className}}
+<br/>
+
+<input type="text" #namer="ngModel" [class.is-invalid]="namer.invalid && namer.touched" 
+name="username" [(ngModel)]="userModel.username"><br>
+{{namer.untouched}}
+<input type="email" name="email"  [(ngModel)]="userModel.email"/><br>
+<input type="text" name="{{title}}" /><br>
+
+
+<!-- <div ngModelGroup="address">
+    <input type="text" name="city" ngModel/>
+    <input type="text" name="street" ngModel/>
+</div> -->
+
+
+</form>
